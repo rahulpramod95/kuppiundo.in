@@ -1,0 +1,1208 @@
+[
+  {
+    "id": "royal-stag",
+    "name": "Royal Stag",
+    "brand": "Pernod Ricard",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "sweet"
+    ],
+    "notes": [
+      "vanilla",
+      "caramel"
+    ],
+    "occasions": [
+      "daily",
+      "party",
+      "casual"
+    ],
+    "tags": [
+      "popular",
+      "value"
+    ],
+    "score": 72,
+    "emoji": "🥃",
+    "price_750ml": 820,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 200
+      },
+      {
+        "ml": 375,
+        "price": 405
+      },
+      {
+        "ml": 750,
+        "price": 820
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "blenders-pride",
+    "name": "Blender's Pride",
+    "brand": "Pernod Ricard",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "fruity"
+    ],
+    "notes": [
+      "honey",
+      "oak"
+    ],
+    "occasions": [
+      "gifting",
+      "party",
+      "casual"
+    ],
+    "tags": [
+      "premium-imfl"
+    ],
+    "score": 78,
+    "emoji": "🥃",
+    "price_750ml": 1180,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 290
+      },
+      {
+        "ml": 375,
+        "price": 590
+      },
+      {
+        "ml": 750,
+        "price": 1180
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "officers-choice",
+    "name": "Officer's Choice",
+    "brand": "Allied Blenders",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth"
+    ],
+    "notes": [
+      "spice",
+      "caramel"
+    ],
+    "occasions": [
+      "daily",
+      "party"
+    ],
+    "tags": [
+      "budget"
+    ],
+    "score": 65,
+    "emoji": "🥃",
+    "price_750ml": 620,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 155
+      },
+      {
+        "ml": 375,
+        "price": 310
+      },
+      {
+        "ml": 750,
+        "price": 620
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "amrut-fusion",
+    "name": "Amrut Fusion",
+    "brand": "Amrut Distilleries",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 50,
+    "abv_range": "high",
+    "taste": [
+      "fruity",
+      "spicy"
+    ],
+    "notes": [
+      "vanilla",
+      "oak",
+      "honey"
+    ],
+    "occasions": [
+      "gifting",
+      "casual"
+    ],
+    "tags": [
+      "craft",
+      "award-winning"
+    ],
+    "score": 92,
+    "emoji": "🥃",
+    "price_750ml": 4200,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 1025
+      },
+      {
+        "ml": 375,
+        "price": 2075
+      },
+      {
+        "ml": 750,
+        "price": 4200
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "johnnie-walker-red",
+    "name": "Johnnie Walker Red Label",
+    "brand": "Diageo",
+    "type": "whisky",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "spicy"
+    ],
+    "notes": [
+      "citrus",
+      "spice"
+    ],
+    "occasions": [
+      "party",
+      "cocktails",
+      "daily"
+    ],
+    "tags": [
+      "imported",
+      "classic"
+    ],
+    "score": 74,
+    "emoji": "🥃",
+    "price_750ml": 2450,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 600
+      },
+      {
+        "ml": 375,
+        "price": 1280
+      },
+      {
+        "ml": 750,
+        "price": 2450
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "jack-daniels-single-malt",
+    "name": "Jack Daniel's Single Malt",
+    "brand": "Jack Daniel's Distillery",
+    "type": "whisky",
+    "origin": "fmfl",
+    "abv_value": 53.9,
+    "abv_range": "high",
+    "taste": [
+      "smooth",
+      "fruity",
+      "spicy"
+    ],
+    "notes": [
+      "vanilla",
+      "oak",
+      "honey"
+    ],
+    "occasions": [
+      "gifting",
+      "casual"
+    ],
+    "tags": [
+      "imported",
+      "new-launch",
+      "limited"
+    ],
+    "score": 96,
+    "emoji": "🥃",
+    "price_750ml": 7890,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 1925
+      },
+      {
+        "ml": 375,
+        "price": 3900
+      },
+      {
+        "ml": 750,
+        "price": 7890
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "jack-daniels",
+    "name": "Jack Daniel's Old No. 7",
+    "brand": "Brown-Forman",
+    "type": "whisky",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "sweet",
+      "smooth"
+    ],
+    "notes": [
+      "vanilla",
+      "caramel",
+      "oak"
+    ],
+    "occasions": [
+      "party",
+      "cocktails",
+      "gifting"
+    ],
+    "tags": [
+      "imported",
+      "iconic"
+    ],
+    "score": 85,
+    "emoji": "🥃",
+    "price_750ml": 3200,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 780
+      },
+      {
+        "ml": 375,
+        "price": 1580
+      },
+      {
+        "ml": 750,
+        "price": 3200
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "mcdowells-no1",
+    "name": "McDowell's No.1",
+    "brand": "United Spirits",
+    "type": "rum",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "sweet",
+      "smooth"
+    ],
+    "notes": [
+      "vanilla",
+      "caramel"
+    ],
+    "occasions": [
+      "party",
+      "cocktails",
+      "daily"
+    ],
+    "tags": [
+      "popular"
+    ],
+    "score": 70,
+    "emoji": "🍹",
+    "price_750ml": 580,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 145
+      },
+      {
+        "ml": 375,
+        "price": 295
+      },
+      {
+        "ml": 750,
+        "price": 580
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "old-monk",
+    "name": "Old Monk",
+    "brand": "Mohan Meakin",
+    "type": "rum",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "sweet",
+      "spicy"
+    ],
+    "notes": [
+      "vanilla",
+      "caramel",
+      "spice"
+    ],
+    "occasions": [
+      "daily",
+      "casual",
+      "party"
+    ],
+    "tags": [
+      "cult-favourite"
+    ],
+    "score": 80,
+    "emoji": "🍹",
+    "price_750ml": 520,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 130
+      },
+      {
+        "ml": 375,
+        "price": 265
+      },
+      {
+        "ml": 750,
+        "price": 520
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bacardi-white",
+    "name": "Bacardi Superior",
+    "brand": "Bacardi",
+    "type": "rum",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "dry"
+    ],
+    "notes": [
+      "citrus",
+      "vanilla"
+    ],
+    "occasions": [
+      "cocktails",
+      "party"
+    ],
+    "tags": [
+      "imported",
+      "mixer"
+    ],
+    "score": 76,
+    "emoji": "🍹",
+    "price_750ml": 1680,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 410
+      },
+      {
+        "ml": 375,
+        "price": 830
+      },
+      {
+        "ml": 750,
+        "price": 1680
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "mansion-house",
+    "name": "Mansion House",
+    "brand": "United Spirits",
+    "type": "brandy",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "fruity"
+    ],
+    "notes": [
+      "oak",
+      "caramel"
+    ],
+    "occasions": [
+      "daily",
+      "casual"
+    ],
+    "tags": [
+      "classic"
+    ],
+    "score": 68,
+    "emoji": "🍷",
+    "price_750ml": 480,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 120
+      },
+      {
+        "ml": 375,
+        "price": 245
+      },
+      {
+        "ml": 750,
+        "price": 480
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "morpheus-xo",
+    "name": "Morpheus XO",
+    "brand": "Radico Khaitan",
+    "type": "brandy",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "sweet"
+    ],
+    "notes": [
+      "vanilla",
+      "oak",
+      "chocolate"
+    ],
+    "occasions": [
+      "gifting",
+      "casual"
+    ],
+    "tags": [
+      "premium-imfl"
+    ],
+    "score": 82,
+    "emoji": "🍷",
+    "price_750ml": 980,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 240
+      },
+      {
+        "ml": 375,
+        "price": 495
+      },
+      {
+        "ml": 750,
+        "price": 980
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "hennessy-vs",
+    "name": "Hennessy VS",
+    "brand": "Hennessy",
+    "type": "brandy",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "fruity",
+      "spicy"
+    ],
+    "notes": [
+      "oak",
+      "vanilla",
+      "spice"
+    ],
+    "occasions": [
+      "gifting",
+      "party"
+    ],
+    "tags": [
+      "imported",
+      "luxury"
+    ],
+    "score": 88,
+    "emoji": "🍷",
+    "price_750ml": 4500,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 1100
+      },
+      {
+        "ml": 375,
+        "price": 2225
+      },
+      {
+        "ml": 750,
+        "price": 4500
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "beefeater",
+    "name": "Beefeater London Dry",
+    "brand": "Pernod Ricard",
+    "type": "gin",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "dry",
+      "spicy"
+    ],
+    "notes": [
+      "citrus",
+      "floral",
+      "spice"
+    ],
+    "occasions": [
+      "cocktails",
+      "party"
+    ],
+    "tags": [
+      "imported",
+      "classic"
+    ],
+    "score": 79,
+    "emoji": "🍸",
+    "price_750ml": 2100,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 510
+      },
+      {
+        "ml": 375,
+        "price": 1035
+      },
+      {
+        "ml": 750,
+        "price": 2100
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "greater-than",
+    "name": "Greater Than",
+    "brand": "Nao Spirits",
+    "type": "gin",
+    "origin": "imfl",
+    "abv_value": 43,
+    "abv_range": "medium",
+    "taste": [
+      "dry",
+      "fruity"
+    ],
+    "notes": [
+      "citrus",
+      "floral"
+    ],
+    "occasions": [
+      "cocktails",
+      "gifting"
+    ],
+    "tags": [
+      "craft",
+      "indian-craft"
+    ],
+    "score": 84,
+    "emoji": "🍸",
+    "price_750ml": 1350,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 330
+      },
+      {
+        "ml": 375,
+        "price": 665
+      },
+      {
+        "ml": 750,
+        "price": 1350
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "smirnoff",
+    "name": "Smirnoff No. 21",
+    "brand": "Diageo",
+    "type": "vodka",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "dry"
+    ],
+    "notes": [
+      "citrus"
+    ],
+    "occasions": [
+      "cocktails",
+      "party"
+    ],
+    "tags": [
+      "imported",
+      "mixer"
+    ],
+    "score": 73,
+    "emoji": "🧊",
+    "price_750ml": 1580,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 385
+      },
+      {
+        "ml": 375,
+        "price": 780
+      },
+      {
+        "ml": 750,
+        "price": 1580
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "absolut",
+    "name": "Absolut Blue",
+    "brand": "Pernod Ricard",
+    "type": "vodka",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "dry"
+    ],
+    "notes": [
+      "citrus",
+      "floral"
+    ],
+    "occasions": [
+      "cocktails",
+      "party",
+      "gifting"
+    ],
+    "tags": [
+      "imported"
+    ],
+    "score": 81,
+    "emoji": "🧊",
+    "price_750ml": 1980,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 485
+      },
+      {
+        "ml": 375,
+        "price": 980
+      },
+      {
+        "ml": 750,
+        "price": 1980
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "kingfisher-premium",
+    "name": "Kingfisher Premium",
+    "brand": "United Breweries",
+    "type": "beer",
+    "origin": "imfl",
+    "abv_value": 5,
+    "abv_range": "low",
+    "taste": [
+      "smooth",
+      "dry"
+    ],
+    "notes": [
+      "citrus",
+      "floral"
+    ],
+    "occasions": [
+      "party",
+      "casual",
+      "daily"
+    ],
+    "tags": [
+      "refreshing"
+    ],
+    "score": 75,
+    "emoji": "🍺",
+    "price_750ml": 180,
+    "volumes": [
+      {
+        "ml": 650,
+        "price": 160
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bira-white",
+    "name": "Bira 91 White",
+    "brand": "B9 Beverages",
+    "type": "beer",
+    "origin": "imfl",
+    "abv_value": 5,
+    "abv_range": "low",
+    "taste": [
+      "fruity",
+      "smooth"
+    ],
+    "notes": [
+      "citrus",
+      "floral"
+    ],
+    "occasions": [
+      "party",
+      "casual"
+    ],
+    "tags": [
+      "craft-beer"
+    ],
+    "score": 77,
+    "emoji": "🍺",
+    "price_750ml": 220,
+    "volumes": [
+      {
+        "ml": 330,
+        "price": 110
+      },
+      {
+        "ml": 650,
+        "price": 220
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "heineken",
+    "name": "Heineken",
+    "brand": "Heineken",
+    "type": "beer",
+    "origin": "fmfl",
+    "abv_value": 5,
+    "abv_range": "low",
+    "taste": [
+      "dry",
+      "smooth"
+    ],
+    "notes": [
+      "floral"
+    ],
+    "occasions": [
+      "party",
+      "casual"
+    ],
+    "tags": [
+      "imported"
+    ],
+    "score": 78,
+    "emoji": "🍺",
+    "price_750ml": 280,
+    "volumes": [
+      {
+        "ml": 650,
+        "price": 280
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "sula-red",
+    "name": "Sula Red",
+    "brand": "Sula Vineyards",
+    "type": "wine",
+    "origin": "imfl",
+    "abv_value": 12.5,
+    "abv_range": "low",
+    "taste": [
+      "fruity",
+      "dry"
+    ],
+    "notes": [
+      "chocolate",
+      "spice"
+    ],
+    "occasions": [
+      "casual",
+      "gifting",
+      "party"
+    ],
+    "tags": [
+      "indian-wine"
+    ],
+    "score": 71,
+    "emoji": "🍇",
+    "price_750ml": 720,
+    "volumes": [
+      {
+        "ml": 375,
+        "price": 375
+      },
+      {
+        "ml": 750,
+        "price": 720
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "jacob-creek",
+    "name": "Jacob's Creek Classic Shiraz",
+    "brand": "Jacob's Creek",
+    "type": "wine",
+    "origin": "fmfl",
+    "abv_value": 13.5,
+    "abv_range": "low",
+    "taste": [
+      "fruity",
+      "spicy"
+    ],
+    "notes": [
+      "chocolate",
+      "oak",
+      "spice"
+    ],
+    "occasions": [
+      "gifting",
+      "casual"
+    ],
+    "tags": [
+      "imported"
+    ],
+    "score": 80,
+    "emoji": "🍇",
+    "price_750ml": 1450,
+    "volumes": [
+      {
+        "ml": 375,
+        "price": 755
+      },
+      {
+        "ml": 750,
+        "price": 1450
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "teacher's-50",
+    "name": "Teacher's 50",
+    "brand": "Beam Suntory",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "peaty"
+    ],
+    "notes": [
+      "oak",
+      "honey"
+    ],
+    "occasions": [
+      "casual",
+      "gifting"
+    ],
+    "tags": [
+      "smoky"
+    ],
+    "score": 83,
+    "emoji": "🥃",
+    "price_750ml": 1650,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 405
+      },
+      {
+        "ml": 375,
+        "price": 840
+      },
+      {
+        "ml": 750,
+        "price": 1650
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "100-pipers",
+    "name": "100 Pipers Deluxe",
+    "brand": "Pernod Ricard",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "fruity"
+    ],
+    "notes": [
+      "honey",
+      "vanilla"
+    ],
+    "occasions": [
+      "gifting",
+      "party"
+    ],
+    "tags": [
+      "smooth"
+    ],
+    "score": 77,
+    "emoji": "🥃",
+    "price_750ml": 1050,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 260
+      },
+      {
+        "ml": 375,
+        "price": 530
+      },
+      {
+        "ml": 750,
+        "price": 1050
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "signature",
+    "name": "Signature Premier Grain",
+    "brand": "United Spirits",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "sweet"
+    ],
+    "notes": [
+      "vanilla",
+      "oak"
+    ],
+    "occasions": [
+      "gifting",
+      "casual"
+    ],
+    "tags": [
+      "premium-imfl"
+    ],
+    "score": 79,
+    "emoji": "🥃",
+    "price_750ml": 1280,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 310
+      },
+      {
+        "ml": 375,
+        "price": 650
+      },
+      {
+        "ml": 750,
+        "price": 1280
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "black-dog-triple-gold",
+    "name": "Black Dog Triple Gold Reserve",
+    "brand": "United Spirits",
+    "type": "whisky",
+    "origin": "imfl",
+    "abv_value": 42.8,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "fruity"
+    ],
+    "notes": [
+      "honey",
+      "caramel"
+    ],
+    "occasions": [
+      "party",
+      "daily"
+    ],
+    "tags": [
+      "value"
+    ],
+    "score": 73,
+    "emoji": "🥃",
+    "price_750ml": 890,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 220
+      },
+      {
+        "ml": 375,
+        "price": 450
+      },
+      {
+        "ml": 750,
+        "price": 890
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "jameson",
+    "name": "Jameson Irish Whiskey",
+    "brand": "Pernod Ricard",
+    "type": "whisky",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "fruity"
+    ],
+    "notes": [
+      "vanilla",
+      "honey",
+      "oak"
+    ],
+    "occasions": [
+      "cocktails",
+      "party",
+      "gifting"
+    ],
+    "tags": [
+      "imported",
+      "smooth"
+    ],
+    "score": 86,
+    "emoji": "🥃",
+    "price_750ml": 2850,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 695
+      },
+      {
+        "ml": 375,
+        "price": 1410
+      },
+      {
+        "ml": 750,
+        "price": 2850
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "ballantines",
+    "name": "Ballantine's Finest",
+    "brand": "Pernod Ricard",
+    "type": "whisky",
+    "origin": "fmfl",
+    "abv_value": 40,
+    "abv_range": "medium",
+    "taste": [
+      "smooth",
+      "sweet"
+    ],
+    "notes": [
+      "honey",
+      "vanilla",
+      "oak"
+    ],
+    "occasions": [
+      "party",
+      "cocktails"
+    ],
+    "tags": [
+      "imported"
+    ],
+    "score": 75,
+    "emoji": "🥃",
+    "price_750ml": 2200,
+    "volumes": [
+      {
+        "ml": 180,
+        "price": 535
+      },
+      {
+        "ml": 375,
+        "price": 1085
+      },
+      {
+        "ml": 750,
+        "price": 2200
+      }
+    ],
+    "available": true,
+    "updated_at": "2025-01-01T00:00:00Z"
+  }
+]

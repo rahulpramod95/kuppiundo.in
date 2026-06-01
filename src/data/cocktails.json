@@ -1,0 +1,213 @@
+[
+  {
+    "id": "old-fashioned",
+    "name": "Old Fashioned",
+    "spiritType": "whisky",
+    "emoji": "🥃",
+    "description": "A timeless stir-down with whisky, bitters, and a touch of sugar.",
+    "ingredients": [
+      { "name": "Blender's Pride", "amount": "60 ml", "bottleId": "blenders-pride", "emoji": "🥃", "role": "spirit" },
+      { "name": "Angostura bitters", "amount": "2 dashes", "emoji": "💧", "role": "mixer" },
+      { "name": "Sugar cube", "amount": "1", "emoji": "🧊", "role": "garnish" },
+      { "name": "Orange peel", "amount": "1 twist", "emoji": "🍊", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "whisky-sour",
+    "name": "Whisky Sour",
+    "spiritType": "whisky",
+    "emoji": "🍋",
+    "description": "Bright and balanced — whisky shaken with citrus and a silky foam.",
+    "ingredients": [
+      { "name": "Royal Stag", "amount": "50 ml", "bottleId": "royal-stag", "emoji": "🥃", "role": "spirit" },
+      { "name": "Fresh lemon juice", "amount": "25 ml", "emoji": "🍋", "role": "mixer" },
+      { "name": "Simple syrup", "amount": "15 ml", "emoji": "🍯", "role": "mixer" },
+      { "name": "Egg white", "amount": "1", "emoji": "🥚", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "indian-highball",
+    "name": "Indian Highball",
+    "spiritType": "whisky",
+    "emoji": "🧊",
+    "description": "Light, fizzy, and easy — whisky topped with soda over ice.",
+    "ingredients": [
+      { "name": "Officer's Choice", "amount": "45 ml", "bottleId": "officers-choice", "emoji": "🥃", "role": "spirit" },
+      { "name": "Soda water", "amount": "Top up", "emoji": "💧", "role": "mixer" },
+      { "name": "Lemon wedge", "amount": "1", "emoji": "🍋", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "mojito",
+    "name": "Mojito",
+    "spiritType": "rum",
+    "emoji": "🌿",
+    "description": "Fresh mint, lime, and white rum — Kerala's favourite summer cooler.",
+    "ingredients": [
+      { "name": "Bacardi White", "amount": "50 ml", "bottleId": "bacardi-white", "emoji": "🍹", "role": "spirit" },
+      { "name": "Fresh lime juice", "amount": "25 ml", "emoji": "🍋", "role": "mixer" },
+      { "name": "Mint leaves", "amount": "8–10", "emoji": "🌿", "role": "garnish" },
+      { "name": "Soda water", "amount": "Top up", "emoji": "💧", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "daiquiri",
+    "name": "Daiquiri",
+    "spiritType": "rum",
+    "emoji": "🍹",
+    "description": "Three-ingredient classic — rum, lime, and sugar in perfect harmony.",
+    "ingredients": [
+      { "name": "Bacardi White", "amount": "60 ml", "bottleId": "bacardi-white", "emoji": "🍹", "role": "spirit" },
+      { "name": "Fresh lime juice", "amount": "20 ml", "emoji": "🍋", "role": "mixer" },
+      { "name": "Simple syrup", "amount": "15 ml", "emoji": "🍯", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "dark-n-stormy",
+    "name": "Dark 'n' Stormy",
+    "spiritType": "rum",
+    "emoji": "⛈️",
+    "description": "Dark rum layered over ginger beer — bold and spicy.",
+    "ingredients": [
+      { "name": "Old Monk", "amount": "60 ml", "bottleId": "old-monk", "emoji": "🍹", "role": "spirit" },
+      { "name": "Ginger beer", "amount": "Top up", "emoji": "🫚", "role": "mixer" },
+      { "name": "Lime wedge", "amount": "1", "emoji": "🍋", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "sidecar",
+    "name": "Sidecar",
+    "spiritType": "brandy",
+    "emoji": "🍊",
+    "description": "Elegant sour — brandy, orange liqueur, and lemon in a sugar rim.",
+    "ingredients": [
+      { "name": "Mansion House", "amount": "50 ml", "bottleId": "mansion-house", "emoji": "🍷", "role": "spirit" },
+      { "name": "Triple sec", "amount": "20 ml", "emoji": "🍊", "role": "mixer" },
+      { "name": "Fresh lemon juice", "amount": "20 ml", "emoji": "🍋", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "brandy-alexander",
+    "name": "Brandy Alexander",
+    "spiritType": "brandy",
+    "emoji": "🍫",
+    "description": "Creamy dessert cocktail with brandy, crème de cacao, and cream.",
+    "ingredients": [
+      { "name": "Morpheus XO", "amount": "30 ml", "bottleId": "morpheus-xo", "emoji": "🍷", "role": "spirit" },
+      { "name": "Crème de cacao", "amount": "30 ml", "emoji": "🍫", "role": "mixer" },
+      { "name": "Fresh cream", "amount": "30 ml", "emoji": "🥛", "role": "mixer" },
+      { "name": "Nutmeg", "amount": "Grated", "emoji": "✨", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "gin-tonic",
+    "name": "Gin & Tonic",
+    "spiritType": "gin",
+    "emoji": "🍸",
+    "description": "Crisp and refreshing — gin with tonic and a citrus twist.",
+    "ingredients": [
+      { "name": "Greater Than", "amount": "50 ml", "bottleId": "greater-than", "emoji": "🍸", "role": "spirit" },
+      { "name": "Tonic water", "amount": "Top up", "emoji": "💧", "role": "mixer" },
+      { "name": "Lime wedge", "amount": "1", "emoji": "🍋", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "negroni",
+    "name": "Negroni",
+    "spiritType": "gin",
+    "emoji": "🔴",
+    "description": "Equal parts gin, vermouth, and Campari — bitter and bold.",
+    "ingredients": [
+      { "name": "Beefeater", "amount": "30 ml", "bottleId": "beefeater", "emoji": "🍸", "role": "spirit" },
+      { "name": "Sweet vermouth", "amount": "30 ml", "emoji": "🍷", "role": "mixer" },
+      { "name": "Campari", "amount": "30 ml", "emoji": "🔴", "role": "mixer" },
+      { "name": "Orange peel", "amount": "1 twist", "emoji": "🍊", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "martini",
+    "name": "Dry Martini",
+    "spiritType": "gin",
+    "emoji": "🫒",
+    "description": "Ice-cold gin stirred with dry vermouth and an olive.",
+    "ingredients": [
+      { "name": "Beefeater", "amount": "60 ml", "bottleId": "beefeater", "emoji": "🍸", "role": "spirit" },
+      { "name": "Dry vermouth", "amount": "10 ml", "emoji": "💧", "role": "mixer" },
+      { "name": "Olives", "amount": "2–3", "emoji": "🫒", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "moscow-mule",
+    "name": "Moscow Mule",
+    "spiritType": "vodka",
+    "emoji": "🫚",
+    "description": "Vodka, ginger beer, and lime — served in a copper mug.",
+    "ingredients": [
+      { "name": "Smirnoff", "amount": "50 ml", "bottleId": "smirnoff", "emoji": "🧊", "role": "spirit" },
+      { "name": "Ginger beer", "amount": "Top up", "emoji": "🫚", "role": "mixer" },
+      { "name": "Fresh lime juice", "amount": "15 ml", "emoji": "🍋", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "vodka-soda",
+    "name": "Vodka Soda",
+    "spiritType": "vodka",
+    "emoji": "💧",
+    "description": "Clean and low-cal — vodka with soda and a citrus squeeze.",
+    "ingredients": [
+      { "name": "Absolut", "amount": "50 ml", "bottleId": "absolut", "emoji": "🧊", "role": "spirit" },
+      { "name": "Soda water", "amount": "Top up", "emoji": "💧", "role": "mixer" },
+      { "name": "Lime wedge", "amount": "1", "emoji": "🍋", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "shandy",
+    "name": "Shandy",
+    "spiritType": "beer",
+    "emoji": "🍺",
+    "description": "Beer cut with lemonade — light, fizzy, and sessionable.",
+    "ingredients": [
+      { "name": "Kingfisher Premium", "amount": "150 ml", "bottleId": "kingfisher-premium", "emoji": "🍺", "role": "spirit" },
+      { "name": "Lemonade", "amount": "150 ml", "emoji": "🍋", "role": "mixer" },
+      { "name": "Ice", "amount": "Cubed", "emoji": "🧊", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "michelada",
+    "name": "Michelada",
+    "spiritType": "beer",
+    "emoji": "🌶️",
+    "description": "Spicy beer cocktail with lime, hot sauce, and a salted rim.",
+    "ingredients": [
+      { "name": "Bira White", "amount": "330 ml", "bottleId": "bira-white", "emoji": "🍺", "role": "spirit" },
+      { "name": "Fresh lime juice", "amount": "20 ml", "emoji": "🍋", "role": "mixer" },
+      { "name": "Hot sauce", "amount": "2 dashes", "emoji": "🌶️", "role": "mixer" },
+      { "name": "Salt rim", "amount": "1", "emoji": "🧂", "role": "garnish" }
+    ]
+  },
+  {
+    "id": "sangria",
+    "name": "Sangria",
+    "spiritType": "wine",
+    "emoji": "🍇",
+    "description": "Red wine punch with fruit — perfect for sharing at parties.",
+    "ingredients": [
+      { "name": "Sula Red", "amount": "750 ml", "bottleId": "sula-red", "emoji": "🍇", "role": "spirit" },
+      { "name": "Orange slices", "amount": "2", "emoji": "🍊", "role": "garnish" },
+      { "name": "Apple cubes", "amount": "1 cup", "emoji": "🍎", "role": "garnish" },
+      { "name": "Brandy", "amount": "60 ml", "emoji": "🍷", "role": "mixer" }
+    ]
+  },
+  {
+    "id": "wine-spritzer",
+    "name": "Wine Spritzer",
+    "spiritType": "wine",
+    "emoji": "✨",
+    "description": "Light and bubbly — wine topped with soda over ice.",
+    "ingredients": [
+      { "name": "Jacob's Creek", "amount": "100 ml", "bottleId": "jacob-creek", "emoji": "🍇", "role": "spirit" },
+      { "name": "Soda water", "amount": "Top up", "emoji": "💧", "role": "mixer" },
+      { "name": "Lemon slice", "amount": "1", "emoji": "🍋", "role": "garnish" }
+    ]
+  }
+]

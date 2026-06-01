@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+
+  /* Brand & accent */
+  --primary-active: #5a252c;
+  --primary-disabled: #d4d4d4;
+  --legal-link: #428bff;
+
+  /* Airbnb — surface */
+  --canvas: #ffffff;
+  --surface-soft: #f7f7f7;
+  --surface-card: #ffffff;
+  --surface-strong: #f2f2f2;
+  --surface-elevated: #f2f2f2;
+
+  /* Aliases used in components */
+  --canvas-elevated: var(--surface-strong);
+
+  /* Airbnb — text & hairlines */
+  --ink: #222222;
+  --body-text: #3f3f3f;
+  --body-strong: #222222;
+  --text-muted: #6a6a6a;
+  --muted-soft: #929292;
+  --hairline: #dddddd;
+  --hairline-soft: #ebebeb;
+  --border-strong: #c1c1c1;
+  --on-primary: #ffffff;
+  --on-dark: #ffffff;
+
+  /* Semantic */
+  --success: #0fa336;
+  --warning: #f4b400;
+
+  /* shadcn mappings */
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --card: var(--surface-card);
+  --card-foreground: var(--ink);
+  --popover: var(--surface-card);
+  --popover-foreground: var(--ink);
+  --primary: #722f37;
+  --primary-foreground: var(--on-primary);
+  --secondary: var(--surface-soft);
+  --secondary-foreground: var(--ink);
+  --muted: var(--surface-strong);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--primary);
+  --accent-foreground: var(--on-primary);
+  --destructive: #c13515;
+  --border: var(--hairline);
+  --input: var(--canvas);
+  --ring: var(--ink);
+  --radius: 0.875rem;
+}
+
+@theme {
+  --color-primary-active: #5a252c;
+  --color-primary-disabled: #d4d4d4;
+  --color-legal-link: #428bff;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f7f7f7;
+  --color-surface-card: #ffffff;
+  --color-surface-strong: #f2f2f2;
+  --color-surface-elevated: #f2f2f2;
+  --color-canvas-elevated: #f2f2f2;
+  --color-ink: #222222;
+  --color-body-text: #3f3f3f;
+  --color-body-strong: #222222;
+  --color-text-muted: #6a6a6a;
+  --color-muted-soft: #929292;
+  --color-hairline: #dddddd;
+  --color-hairline-soft: #ebebeb;
+  --color-border-strong: #c1c1c1;
+  --color-on-primary: #ffffff;
+  --color-on-dark: #ffffff;
+  --color-success: #0fa336;
+  --color-warning: #f4b400;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-malayalam: var(--font-malayalam);
+}
+
+@theme inline {
+  --font-heading: var(--font-display);
+  --font-sans: var(--font-body);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-feature-settings: "cv11" 1, "ss01" 1;
+}
+
+.font-malayalam {
+  font-family: var(--font-malayalam), system-ui, sans-serif;
+}
+
+html[lang="ml"] .font-display {
+  font-family: var(--font-malayalam), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.app-shell {
+  @apply mx-auto w-full max-w-md bg-background lg:my-4 lg:rounded-xl lg:border lg:border-border lg:shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0];
+}
+
+.app-frame {
+  @apply mx-auto w-full max-w-md;
+}
+
+.soft-card {
+  @apply rounded-md bg-card shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0];
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-canvas text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
