@@ -58,11 +58,16 @@ function resolveProduct(bottleId: string): CatalogProduct | undefined {
   return slugIndex.get(slug);
 }
 
-/** Local scraped asset when available, else Madhuloka CDN. */
+/** Image URL for a catalog bottle — CDN in production, local assets in dev when present. */
 export function getBottleImageSrc(bottleId: string): string | null {
   const product = resolveProduct(bottleId);
   if (!product) return null;
-  return product.localPath ?? product.imageUrl;
+
+  if (process.env.NODE_ENV === "development" && product.localPath) {
+    return product.localPath;
+  }
+
+  return product.imageUrl ?? product.localPath;
 }
 
 export function getBottleImageSrcMap(bottleIds: string[]): Record<string, string> {
