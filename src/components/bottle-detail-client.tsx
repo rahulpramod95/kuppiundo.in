@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ChevronLeft, Heart, MapPin, Minus, Plus, Share2 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -21,61 +20,7 @@ import { formatPrice as formatInr } from "@/lib/types";
 
 type BottleDetailClientProps = {
   bottle: Bottle;
-  imageSrc?: string | null;
 };
-
-function BottleHeroVisual({
-  src,
-  emoji,
-  name,
-  reduceMotion,
-  className,
-}: {
-  src?: string | null;
-  emoji: string;
-  name: string;
-  reduceMotion: boolean | null;
-  className?: string;
-}) {
-  const [failed, setFailed] = useState(false);
-  const float = reduceMotion
-    ? undefined
-    : { y: [0, -6, 0] as [number, number, number] };
-  const floatTransition = reduceMotion
-    ? undefined
-    : { duration: 2.8, repeat: Infinity, ease: "easeInOut" as const };
-
-  if (!src || failed) {
-    return (
-      <motion.span
-        className={cn("flex h-full scale-[1.15] items-center justify-center text-[5.5rem]", className)}
-        animate={float}
-        transition={floatTransition}
-        aria-hidden
-      >
-        {emoji}
-      </motion.span>
-    );
-  }
-
-  return (
-    <motion.div
-      className={cn("relative h-full w-full", className)}
-      animate={float}
-      transition={floatTransition}
-    >
-      <Image
-        src={src}
-        alt={name}
-        fill
-        priority
-        sizes="224px"
-        className="object-contain object-center scale-[1.15]"
-        onError={() => setFailed(true)}
-      />
-    </motion.div>
-  );
-}
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -116,7 +61,7 @@ function HeroIconButton({
   );
 }
 
-export function BottleDetailClient({ bottle, imageSrc }: BottleDetailClientProps) {
+export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
   const t = useTranslations("detail");
   const tc = useTranslations("categories");
   const tf = useTranslations("filters");
@@ -217,13 +162,19 @@ export function BottleDetailClient({ bottle, imageSrc }: BottleDetailClientProps
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="flex w-full justify-center px-5"
           >
-            <div className="relative h-64 w-56 overflow-hidden">
-              <BottleHeroVisual
-                src={imageSrc}
-                emoji={bottle.emoji}
-                name={bottle.name}
-                reduceMotion={reduceMotion}
-              />
+            <div className="relative flex h-64 w-56 items-center justify-center overflow-hidden">
+              <motion.span
+                className="text-[5.5rem]"
+                animate={reduceMotion ? undefined : { y: [0, -6, 0] }}
+                transition={
+                  reduceMotion
+                    ? undefined
+                    : { duration: 2.8, repeat: Infinity, ease: "easeInOut" }
+                }
+                aria-hidden
+              >
+                {bottle.emoji}
+              </motion.span>
             </div>
           </motion.div>
         </div>

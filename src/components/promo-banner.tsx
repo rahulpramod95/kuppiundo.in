@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, type MouseEvent } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, type PanInfo } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -121,23 +120,16 @@ export function PromoBanner({ bottles }: PromoBannerProps) {
             </div>
 
             <motion.div
-              className="pointer-events-none absolute inset-y-0 right-0 z-10 flex w-36 items-center justify-center"
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 flex w-36 items-center justify-center text-[5.5rem]"
               animate={reduceMotion ? undefined : { y: [0, -6, 0], rotate: [0, 4, 0] }}
               transition={
                 reduceMotion
                   ? undefined
                   : { duration: 3, repeat: Infinity, ease: "easeInOut" }
               }
+              aria-hidden
             >
-              <Image
-                src="/promo-bottle.webp"
-                alt=""
-                width={144}
-                height={176}
-                className="h-44 w-auto object-contain object-center drop-shadow-md"
-                draggable={false}
-                priority
-              />
+              {bottle.emoji}
             </motion.div>
           </Link>
         </motion.div>

@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -12,47 +10,14 @@ import { cn } from "@/lib/utils";
 
 type BottleTileProps = {
   bottle: Bottle;
-  imageSrc?: string | null;
   matchScore?: number;
   showBestMatch?: boolean;
   className?: string;
   index?: number;
 };
 
-function BottleTileThumbnail({
-  src,
-  emoji,
-  name,
-}: {
-  src?: string | null;
-  emoji: string;
-  name: string;
-}) {
-  const [failed, setFailed] = useState(false);
-
-  if (!src || failed) {
-    return (
-      <span className="text-5xl transition-transform group-hover:scale-110" aria-hidden>
-        {emoji}
-      </span>
-    );
-  }
-
-  return (
-    <Image
-      src={src}
-      alt={name}
-      width={120}
-      height={128}
-      className="max-h-[7.25rem] w-auto max-w-[88%] object-contain transition-transform group-hover:scale-105"
-      onError={() => setFailed(true)}
-    />
-  );
-}
-
 export function BottleTile({
   bottle,
-  imageSrc,
   matchScore,
   showBestMatch = false,
   className,
@@ -74,7 +39,9 @@ export function BottleTile({
       >
         <article className="soft-card flex h-[15.5rem] flex-col overflow-hidden border border-hairline bg-canvas transition-transform duration-200 active:scale-[0.98]">
           <div className="relative flex h-32 shrink-0 items-center justify-center bg-canvas px-2">
-            <BottleTileThumbnail src={imageSrc} emoji={bottle.emoji} name={bottle.name} />
+            <span className="text-5xl transition-transform group-hover:scale-110" aria-hidden>
+              {bottle.emoji}
+            </span>
             {showBestMatch && (
               <Badge className="absolute top-[12px] left-[12px] rounded-full text-[10px]">
                 {t("best_match")}

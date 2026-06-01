@@ -12,10 +12,9 @@ import { rankBottles } from "@/lib/scoring";
 
 type BrowsePageClientProps = {
   bottles: Bottle[];
-  imageMap: Record<string, string>;
 };
 
-export function BrowsePageClient({ bottles, imageMap }: BrowsePageClientProps) {
+export function BrowsePageClient({ bottles }: BrowsePageClientProps) {
   const t = useTranslations("browse");
   const tResults = useTranslations("results");
   const tFilters = useTranslations("filters");
@@ -85,12 +84,7 @@ export function BrowsePageClient({ bottles, imageMap }: BrowsePageClientProps) {
         ) : (
           <div className="grid grid-cols-2 items-stretch gap-4">
             {results.map((bottle, index) => (
-              <BottleTile
-                key={bottle.id}
-                bottle={bottle}
-                imageSrc={imageMap[bottle.id]}
-                index={index}
-              />
+              <BottleTile key={bottle.id} bottle={bottle} index={index} />
             ))}
           </div>
         )}
