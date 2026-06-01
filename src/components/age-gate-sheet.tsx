@@ -14,9 +14,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  isOfLegalAge,
-  maxDobForLegalAge,
-  parseDob,
+  isOfLegalAgeFromBirthYear,
+  maxBirthYear,
+  parseBirthYear,
   setAgeVerified,
 } from "@/lib/age-gate";
 import { cn } from "@/lib/utils";
@@ -28,17 +28,25 @@ type AgeGateSheetProps = {
 
 export function AgeGateSheet({ open, onVerified }: AgeGateSheetProps) {
   const t = useTranslations("age_gate");
-  const maxDob = useMemo(() => maxDobForLegalAge(), []);
-  const [dob, setDob] = useState("");
-  const [error, setError] = useState<"missing" | "underage" | null>(null);
+  const latestBirthYear = useMemo(() => maxBirthYear(), []);
+  const [birthYear, setBirthYear] = useState("");
+  const [error, setError] = useState<"missing" | "invalid" | "underage" | null>(
+    null,
+  );
 
   function handleContinue() {
-    const parsed = parseDob(dob);
-    if (!parsed) {
+    if (!birthYear.trim()) {
       setError("missing");
       return;
     }
-    if (!isOfLegalAge(parsed)) {
+
+    const parsed = parseBirthYear(birthYear);
+    if (!parsed) {
+      setError("invalid");
+      return;
+    }
+
+    if (!isOfLegalAgeFromBirthYear(parsed)) {
       setError("underage");
       return;
     }
@@ -75,27 +83,38 @@ export function AgeGateSheet({ open, onVerified }: AgeGateSheetProps) {
         </SheetHeader>
 
         <div className="space-y-2 px-0">
-          <label htmlFor="age-gate-dob" className="text-sm font-medium text-foreground">
-            {t("dob_label")}
+          <label htmlFor="age-gate-birth-year" className="text-sm font-medium text-foreground">
+            {t("birth_year_label")}
           </label>
           <Input
-            id="age-gate-dob"
-            type="date"
-            value={dob}
-            max={maxDob}
+            id="age-gate-birth-year"
+            type="text"
+            inputMode="numeric"
+            autoComplete="bday-year"
+            placeholder={t("birth_year_placeholder")}
+            value={birthYear}
+            maxLength={4}
+            aria-invalid={error !== null}
             onChange={(event) => {
-              setDob(event.target.value);
+              setBirthYear(event.target.value.replace(/\D/g, "").slice(0, 4));
               setError(null);
             }}
-            aria-invalid={error !== null}
             className={cn(
-              "h-11 text-base",
+              "h-12 text-center text-lg font-medium tabular-nums tracking-widest",
               error && "border-destructive ring-destructive/20",
             )}
           />
+          <p className="text-xs text-muted-foreground">
+            {t("birth_year_hint", { year: latestBirthYear })}
+          </p>
           {error === "missing" ? (
             <p className="text-sm text-destructive" role="alert">
               {t("error_missing")}
+            </p>
+          ) : null}
+          {error === "invalid" ? (
+            <p className="text-sm text-destructive" role="alert">
+              {t("error_invalid")}
             </p>
           ) : null}
           {error === "underage" ? (

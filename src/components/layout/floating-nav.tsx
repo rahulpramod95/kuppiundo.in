@@ -60,14 +60,9 @@ export function FloatingNav() {
 
       <div className="flex flex-1 items-center justify-center gap-2 px-2">
         <div className="flex size-[26px] shrink-0 items-center justify-center rounded-md bg-primary">
-          <span className="font-display text-xs font-extrabold text-primary-foreground">K</span>
+          <span className="text-xs font-extrabold text-primary-foreground">K</span>
         </div>
-        <span
-          className={cn(
-            "font-display text-[15px] font-bold leading-none",
-            isMalayalam && "font-malayalam",
-          )}
-        >
+        <span className="text-[15px] font-bold leading-none">
           <span className="text-ink">{t("nav_wordmark_prefix")}</span>
           <span className="text-primary">{t("nav_wordmark_suffix")}</span>
         </span>
@@ -95,7 +90,7 @@ export function FloatingNav() {
         >
           <span
             className={cn(
-              "font-malayalam text-base font-medium leading-none",
+              "text-base font-medium leading-none",
               isMalayalam ? "text-primary" : "text-body-text",
             )}
           >

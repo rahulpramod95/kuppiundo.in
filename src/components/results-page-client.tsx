@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 
 type ResultsPageClientProps = {
   bottles: Bottle[];
+  imageMap: Record<string, string>;
   filters: FilterState;
   initialSort: SortOption;
   initialQuery?: string;
@@ -27,6 +28,7 @@ type ResultsPageClientProps = {
 
 export function ResultsPageClient({
   bottles,
+  imageMap,
   filters,
   initialSort,
   initialQuery = "",
@@ -92,7 +94,7 @@ export function ResultsPageClient({
               type="button"
               size="sm"
               variant={sort === option ? "default" : "secondary"}
-              className="shrink-0 rounded-full"
+              className="h-11 min-h-11 shrink-0 rounded-full px-4 text-sm"
               onClick={() => setSort(option)}
             >
               {t(option === "match" ? "sort_match" : option === "price_asc" ? "sort_price_asc" : option === "price_desc" ? "sort_price_desc" : "sort_score")}
@@ -124,6 +126,7 @@ export function ResultsPageClient({
                 <BottleTile
                   key={bottle.id}
                   bottle={bottle}
+                  imageSrc={imageMap[bottle.id]}
                   matchScore={bottle.matchScore}
                   index={index}
                 />

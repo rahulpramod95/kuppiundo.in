@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { motion } from "framer-motion";
-import { Heart, MapPin, Minus, Plus, Share2 } from "lucide-react";
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import { ChevronLeft, Heart, MapPin, Minus, Plus, Share2 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -19,7 +21,61 @@ import { formatPrice as formatInr } from "@/lib/types";
 
 type BottleDetailClientProps = {
   bottle: Bottle;
+  imageSrc?: string | null;
 };
+
+function BottleHeroVisual({
+  src,
+  emoji,
+  name,
+  reduceMotion,
+  className,
+}: {
+  src?: string | null;
+  emoji: string;
+  name: string;
+  reduceMotion: boolean | null;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  const float = reduceMotion
+    ? undefined
+    : { y: [0, -6, 0] as [number, number, number] };
+  const floatTransition = reduceMotion
+    ? undefined
+    : { duration: 2.8, repeat: Infinity, ease: "easeInOut" as const };
+
+  if (!src || failed) {
+    return (
+      <motion.span
+        className={cn("flex h-full scale-[1.15] items-center justify-center text-[5.5rem]", className)}
+        animate={float}
+        transition={floatTransition}
+        aria-hidden
+      >
+        {emoji}
+      </motion.span>
+    );
+  }
+
+  return (
+    <motion.div
+      className={cn("relative h-full w-full", className)}
+      animate={float}
+      transition={floatTransition}
+    >
+      <Image
+        src={src}
+        alt={name}
+        fill
+        priority
+        sizes="224px"
+        className="object-contain object-center scale-[1.15]"
+        onError={() => setFailed(true)}
+      />
+    </motion.div>
+  );
+}
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -34,10 +90,39 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
+function HeroIconButton({
+  label,
+  onClick,
+  children,
+  active,
+}: {
+  label: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+  active?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className={cn(
+        "flex size-10 items-center justify-center rounded-full bg-canvas/90 shadow-sm ring-1 ring-hairline transition-colors active:scale-95",
+        active && "text-primary",
+      )}
+    >
+      {children}
+    </button>
+  );
+}
+
+export function BottleDetailClient({ bottle, imageSrc }: BottleDetailClientProps) {
   const t = useTranslations("detail");
   const tc = useTranslations("categories");
+  const tf = useTranslations("filters");
   const ta = useTranslations("app");
+  const reduceMotion = useReducedMotion();
+  const router = useRouter();
   const [selectedVolume, setSelectedVolume] = useState(bottle.volumes[0]?.ml ?? 750);
   const [quantity, setQuantity] = useState(1);
   const [liked, setLiked] = useState(false);
@@ -81,46 +166,100 @@ export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
     openWhatsAppShare(previewMessage);
   }
 
-  return (
-    <div className="flex min-h-0 flex-1 flex-col">
-      <div className="min-h-0 flex-1 overflow-y-auto">
-        <div className="px-5 pt-4 pb-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="relative flex h-64 w-full items-center justify-center"
-          >
-            <div className="absolute inset-0 rounded-md bg-surface-soft" />
-            <motion.span
-              className="relative text-[5.5rem] drop-shadow-lg"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-            >
-              {bottle.emoji}
-            </motion.span>
-            <Button
-              type="button"
-              size="icon"
-              variant="ghost"
-              className={cn(
-                "absolute top-2 right-0 size-11 rounded-full bg-card shadow-md",
-                liked && "text-primary",
-              )}
-              onClick={() => setLiked((value) => !value)}
-            >
-              <Heart className={cn("size-5", liked && "fill-primary")} />
-            </Button>
-          </motion.div>
+  const stats = [
+    {
+      label: t("stat_abv"),
+      value: t("vol", { abv: bottle.abv_value }),
+    },
+    {
+      label: t("stat_score"),
+      value: `${bottle.score}`,
+    },
+    {
+      label: t("stat_origin"),
+      value: tf(`origin_${bottle.origin}`),
+    },
+  ];
 
-          <div className="mt-6">
-            <p className="text-sm font-medium text-muted-foreground">{tc(bottle.type)}</p>
-            <h1 className="font-display mt-1 text-3xl font-bold tracking-tight">{bottle.name}</h1>
-            <p className="mt-1 text-sm text-muted-foreground">{t("by", { brand: bottle.brand })}</p>
+  return (
+    <div className="flex min-h-0 flex-1 flex-col bg-surface-soft">
+      <div className="min-h-0 flex-1 overflow-y-auto bg-surface-soft">
+        <div className="bg-canvas pb-2">
+          <div className="flex items-center justify-between px-5 pt-3">
+            <button
+              type="button"
+              aria-label={t("back")}
+              onClick={() => router.back()}
+              className="flex size-10 items-center justify-center rounded-full bg-canvas/90 shadow-sm ring-1 ring-hairline transition-colors active:scale-95"
+            >
+              <ChevronLeft className="size-5" strokeWidth={2} />
+            </button>
+            <div className="flex items-center gap-2">
+              <HeroIconButton
+                label={t("save_label")}
+                active={liked}
+                onClick={() => setLiked((value) => !value)}
+              >
+                <Heart className={cn("size-[18px]", liked && "fill-primary")} strokeWidth={2} />
+              </HeroIconButton>
+              <HeroIconButton
+                label={t("share_to_friends")}
+                onClick={() => setShareOpen(true)}
+              >
+                <Share2 className="size-[18px]" strokeWidth={2} />
+              </HeroIconButton>
+            </div>
           </div>
 
-          <div className="mt-8">
-            <p className="mb-3 text-sm font-semibold">{t("select_volume")}</p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="flex w-full justify-center px-5"
+          >
+            <div className="relative h-64 w-56 overflow-hidden">
+              <BottleHeroVisual
+                src={imageSrc}
+                emoji={bottle.emoji}
+                name={bottle.name}
+                reduceMotion={reduceMotion}
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="relative -mt-5 rounded-t-3xl bg-surface-soft px-5 pt-7 pb-6">
+          <div className="grid grid-cols-3 gap-2.5 pb-6">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={cn(
+                  "rounded-[8px] px-2 py-3.5 text-center",
+                  index === 1
+                    ? "bg-canvas ring-1 ring-hairline"
+                    : "border border-hairline bg-canvas/80",
+                )}
+              >
+                <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+                  {stat.label}
+                </p>
+                <p className="mt-1.5 text-xs font-bold leading-tight text-ink">{stat.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <p className="text-sm font-medium text-muted-foreground">{tc(bottle.type)}</p>
+            <h1 className="font-display mt-1 text-3xl font-bold leading-tight tracking-tight text-ink">
+              {bottle.name}
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {t("by", { brand: bottle.brand })}
+            </p>
+          </div>
+
+          <div className="mt-7">
+            <p className="mb-3 text-sm font-semibold text-ink">{t("select_volume")}</p>
             <div className="flex flex-wrap gap-3">
               {bottle.volumes.map((item) => {
                 const active = selectedVolume === item.ml;
@@ -144,10 +283,28 @@ export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-between">
+          {bottle.taste.length > 0 ? (
+            <div className="mt-7">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                {t("taste_profile")}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {bottle.taste.slice(0, 4).map((note) => (
+                  <span
+                    key={note}
+                    className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-body-text"
+                  >
+                    {tf(`taste_${note}`)}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-8 flex items-end justify-between gap-6">
             <div>
               <p className="text-xs text-muted-foreground">{t("items_label")}</p>
-              <div className="mt-1 inline-flex items-center gap-2 rounded-full bg-secondary p-1">
+              <div className="mt-2 inline-flex items-center gap-2 rounded-full bg-secondary p-1">
                 <Button
                   type="button"
                   variant="ghost"
@@ -157,7 +314,7 @@ export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
                 >
                   <Minus className="size-4" />
                 </Button>
-                <span className="min-w-6 text-center font-bold">{quantity}</span>
+                <span className="min-w-6 text-center font-bold tabular-nums">{quantity}</span>
                 <Button
                   type="button"
                   variant="ghost"
@@ -179,12 +336,12 @@ export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
         </div>
       </div>
 
-      <div className="shrink-0 bg-canvas px-5 pt-4 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <div className="shrink-0 bg-surface-soft px-5 pt-4 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
         <div className="flex flex-col gap-3">
           <Button
             type="button"
             variant="outline"
-            className="h-12 w-full rounded-xl text-sm font-medium"
+            className="h-12 w-full rounded-xl bg-canvas text-sm font-medium"
             onClick={() => setShareOpen(true)}
           >
             <Share2 className="size-4" />
@@ -211,8 +368,8 @@ export function BottleDetailClient({ bottle }: BottleDetailClientProps) {
             <SheetDescription>{t("share_subtitle")}</SheetDescription>
           </SheetHeader>
 
-          <div className="min-h-0 flex-1 overflow-y-auto space-y-5 px-5 py-4">
-            <div className="rounded-md border border-hairline bg-surface-soft p-4">
+          <div className="min-h-0 flex-1 space-y-5 overflow-y-auto px-5 py-4">
+            <div className="rounded-xl border border-hairline bg-surface-soft p-4">
               <p className="font-display text-lg font-bold text-ink">{bottle.name}</p>
               <p className="mt-1 text-sm text-body-text">
                 {selectedVolume} ml × {quantity} · {formatInr(total)}

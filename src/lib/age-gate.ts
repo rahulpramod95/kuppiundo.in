@@ -18,42 +18,24 @@ export function setAgeVerified(): void {
   }
 }
 
-export function parseDob(value: string): Date | null {
-  if (!value) return null;
-  const [year, month, day] = value.split("-").map(Number);
-  if (!year || !month || !day) return null;
-  const date = new Date(year, month - 1, day);
-  if (
-    date.getFullYear() !== year ||
-    date.getMonth() !== month - 1 ||
-    date.getDate() !== day
-  ) {
-    return null;
-  }
-  return date;
+export function parseBirthYear(value: string): number | null {
+  const trimmed = value.trim();
+  if (!/^\d{4}$/.test(trimmed)) return null;
+
+  const year = Number(trimmed);
+  const currentYear = new Date().getFullYear();
+  if (year < 1900 || year > currentYear) return null;
+
+  return year;
 }
 
-export function isOfLegalAge(dob: Date, today = new Date()): boolean {
-  const cutoff = new Date(
-    today.getFullYear() - MIN_DRINKING_AGE,
-    today.getMonth(),
-    today.getDate(),
-  );
-  return dob <= cutoff;
+export function isOfLegalAgeFromBirthYear(
+  birthYear: number,
+  today = new Date(),
+): boolean {
+  return today.getFullYear() - birthYear >= MIN_DRINKING_AGE;
 }
 
-export function maxDobForLegalAge(today = new Date()): string {
-  const d = new Date(
-    today.getFullYear() - MIN_DRINKING_AGE,
-    today.getMonth(),
-    today.getDate(),
-  );
-  return formatDateInputValue(d);
-}
-
-export function formatDateInputValue(date: Date): string {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${year}-${month}-${day}`;
+export function maxBirthYear(today = new Date()): number {
+  return today.getFullYear() - MIN_DRINKING_AGE;
 }

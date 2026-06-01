@@ -16,8 +16,9 @@ export function AppChrome({ children, footer }: AppChromeProps) {
   const isHome = pathname === "/";
   const isFind = pathname === "/find";
   const isBottle = pathname.startsWith("/bottle/");
-  const hideBottomNav = isBottle || isFind;
-  const immersiveScroll = isFind || isBottle;
+  const isCocktails = pathname.startsWith("/cocktails/");
+  const hideBottomNav = isBottle || isFind || isCocktails;
+  const immersiveScroll = isFind || isBottle || isCocktails;
 
   return (
     <div className="relative flex min-h-dvh flex-col">
@@ -28,8 +29,8 @@ export function AppChrome({ children, footer }: AppChromeProps) {
             "flex-1",
             immersiveScroll
               ? "flex min-h-0 flex-col overflow-hidden"
-              : "overflow-y-auto",
-            isHome ? "pt-[4.75rem]" : "pt-0",
+              : cn("overflow-y-auto", !hideBottomNav && "nav-scroll-padding"),
+            isHome ? "pt-[5.5rem]" : "pt-0",
           )}
         >
           {children}

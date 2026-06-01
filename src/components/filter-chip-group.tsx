@@ -45,7 +45,7 @@ export function FilterChipGroup<T extends string>({
         className={cn(
           isLarge
             ? "col-span-2 h-12 min-h-12 w-full rounded-xl px-4 text-sm font-semibold"
-            : "h-8 rounded-full px-3 text-xs font-semibold",
+            : "h-10 min-h-10 rounded-full px-3.5 text-xs font-semibold",
           !allSelected && "bg-card",
         )}
         onClick={() => (allSelected ? onClearAll() : onSelectAll())}
@@ -86,7 +86,7 @@ export function FilterChipGroup<T extends string>({
               className={cn(
                 isLarge
                   ? "h-auto min-h-[4.5rem] w-full flex-col gap-2 rounded-xl px-3 py-3 text-sm font-medium"
-                  : "h-8 rounded-full px-3 text-xs",
+                  : "h-10 min-h-10 rounded-full px-3.5 text-xs",
                 !active && "border-hairline bg-card hover:bg-surface-soft",
                 isLarge && getIcon && "justify-center",
               )}

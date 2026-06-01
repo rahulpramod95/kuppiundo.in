@@ -24,10 +24,13 @@ export function HomePageClient({ bottles, cocktailCounts }: HomePageClientProps)
 
   return (
     <div className="pb-6">
-      <div className="space-y-10 px-5 pt-2">
+      <section className="px-5 pb-8 pt-6">
         <PromoBanner bottles={promoBottles} />
+      </section>
+
+      <section className="px-5">
         <CategoryGrid cocktailCounts={cocktailCounts} />
-      </div>
+      </section>
     </div>
   );
 }

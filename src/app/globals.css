@@ -58,6 +58,15 @@
   --input: var(--canvas);
   --ring: var(--ink);
   --radius: 0.875rem;
+
+  /* Elevation & motion (ui-ux-pro-max spacing/motion rhythm) */
+  --shadow-card: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0,
+    rgba(0, 0, 0, 0.08) 0 4px 12px 0;
+  --shadow-float: rgba(0, 0, 0, 0.06) 0 8px 24px 0, rgba(0, 0, 0, 0.04) 0 2px 8px 0;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --touch-min: 2.75rem;
 }
 
 @theme {
@@ -82,14 +91,13 @@
   --color-on-dark: #ffffff;
   --color-success: #0fa336;
   --color-warning: #f4b400;
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
-  --font-malayalam: var(--font-malayalam);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
 }
 
 @theme inline {
-  --font-heading: var(--font-display);
-  --font-sans: var(--font-body);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -114,34 +122,35 @@
   --radius-xl: 2rem;
   --radius-2xl: 2rem;
   --radius-3xl: 2rem;
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
 }
 
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.font-display {
-  font-family: var(--font-display), system-ui, sans-serif;
-  letter-spacing: -0.02em;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-.font-body {
-  font-family: var(--font-body), system-ui, sans-serif;
-  font-feature-settings: "cv11" 1, "ss01" 1;
-}
-
-.font-malayalam {
-  font-family: var(--font-malayalam), system-ui, sans-serif;
-}
-
-html[lang="ml"] .font-display {
-  font-family: var(--font-malayalam), system-ui, sans-serif;
-  letter-spacing: -0.01em;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .app-shell {
-  @apply mx-auto w-full max-w-md bg-background lg:my-4 lg:rounded-xl lg:border lg:border-border lg:shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0];
+  @apply mx-auto w-full max-w-md bg-background lg:my-4 lg:rounded-xl lg:border lg:border-border;
+  box-shadow: var(--shadow-card);
 }
 
 .app-frame {
@@ -149,7 +158,16 @@ html[lang="ml"] .font-display {
 }
 
 .soft-card {
-  @apply rounded-md bg-card shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0];
+  @apply rounded-xl bg-card;
+  box-shadow: var(--shadow-card);
+}
+
+.interactive-focus {
+  @apply outline-none transition-[color,background-color,box-shadow,transform] duration-150 focus-visible:ring-3 focus-visible:ring-ring/40;
+}
+
+.nav-scroll-padding {
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
 }
 
 .hide-scrollbar {
@@ -165,13 +183,8 @@ html[lang="ml"] .font-display {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-canvas text-foreground;
+    @apply bg-canvas font-sans text-foreground;
     text-rendering: optimizeLegibility;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-display;
+    touch-action: manipulation;
   }
 }

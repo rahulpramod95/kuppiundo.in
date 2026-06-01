@@ -27,6 +27,7 @@
     "find": "Find",
     "browse": "Browse",
     "menu_label": "Open menu",
+    "main_label": "Main navigation",
     "lang_switch_to_ml": "Switch to Malayalam",
     "lang_switch_to_en": "Switch to English"
   },
@@ -53,6 +54,7 @@
     "label_wine": "Wine cocktails",
     "ingredients_title": "What you'll need",
     "swipe_hint": "Swipe for next recipe",
+    "recipe_of": "Recipe {current} of {total}",
     "prev": "Previous",
     "next": "Next",
     "available_kerala": "Available in Kerala",
@@ -200,15 +202,30 @@
     "page_title": "Bottle details",
     "by": "By {brand}",
     "vol": "{abv}% Vol",
-    "back": "Back to results"
+    "back": "Back to results",
+    "save_label": "Save bottle",
+    "stat_abv": "ABV",
+    "stat_score": "Score",
+    "stat_origin": "Origin",
+    "stat_volume": "Size",
+    "taste_profile": "Taste profile",
+    "find_store_short": "Find store"
   },
   "age_gate": {
     "title": "Age verification required",
-    "description": "The legal drinking age is 21 years. Enter your date of birth to confirm you may access this site.",
-    "dob_label": "Date of birth",
+    "description": "The legal drinking age is 21. Enter your year of birth to continue.",
+    "birth_year_label": "Year of birth",
+    "birth_year_placeholder": "e.g. 1998",
+    "birth_year_hint": "You must be born in {year} or earlier.",
     "confirm_cta": "Confirm & continue",
-    "error_missing": "Please enter your date of birth.",
+    "error_missing": "Please enter your year of birth.",
+    "error_invalid": "Please enter a valid 4-digit year.",
     "error_underage": "You must be 21 years or older to use Kuppiundo.",
     "legal_note": "By continuing, you confirm you are of legal drinking age in Kerala. Drink responsibly."
+  },
+  "statutory_warning": {
+    "title": "Statutory warning",
+    "health_warning": "Consumption of alcohol is injurious to health.",
+    "drive_warning": "Be safe. Don't drink and drive."
   }
 }

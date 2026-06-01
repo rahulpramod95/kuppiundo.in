@@ -1,0 +1,11 @@
+{
+  "baseUrl": "https://www.madhuloka.com",
+  "shopPath": "/shop",
+  "outputDir": "public/madhuloka",
+  "manifestPath": "src/data/madhuloka-catalog.json",
+  "imageSize": "image_1024",
+  "pageDelayMs": 250,
+  "downloadDelayMs": 100,
+  "downloadConcurrency": 5,
+  "userAgent": "KuppiundoImporter/1.0 (+https://kuppiundo.in; research/import)"
+}

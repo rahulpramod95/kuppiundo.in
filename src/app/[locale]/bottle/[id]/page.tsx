@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBottleById } from "@/lib/bottles";
+import { getBottleImageSrc } from "@/lib/bottle-images";
 import { BottleDetailPageClient } from "@/components/bottle-detail-page-client";
 
 type PageProps = {
@@ -21,5 +22,7 @@ export default async function BottleDetailPage({ params }: PageProps) {
 
   if (!bottle) notFound();
 
-  return <BottleDetailPageClient bottle={bottle} />;
+  const imageSrc = getBottleImageSrc(bottle.id);
+
+  return <BottleDetailPageClient bottle={bottle} imageSrc={imageSrc} />;
 }
