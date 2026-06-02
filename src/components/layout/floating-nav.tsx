@@ -52,7 +52,7 @@ export function FloatingNav() {
 
   return (
     <div
-      className="absolute top-3.5 right-3 left-3 z-50 flex items-center justify-between rounded-2xl border border-hairline bg-canvas/90 px-3.5 py-2.5 shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0] backdrop-blur-xl lg:hidden"
+      className="fixed top-3.5 right-3 left-3 z-50 flex items-center justify-between rounded-2xl border border-hairline bg-canvas/90 px-3.5 py-2.5 shadow-[rgba(0,0,0,0.02)_0_0_0_1px,rgba(0,0,0,0.04)_0_2px_6px_0,rgba(0,0,0,0.1)_0_4px_8px_0] backdrop-blur-xl lg:hidden"
     >
       <IconButton aria-label={tn("menu_label")} onClick={() => console.log("menu")}>
         <Menu className="size-[18px] text-body-text" strokeWidth={2} />
