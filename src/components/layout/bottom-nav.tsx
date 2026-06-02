@@ -42,7 +42,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label={t("main_label")}
-      className="sticky bottom-0 z-40 border-t border-hairline bg-canvas/95 px-2 pt-1 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md"
+      className="sticky bottom-0 z-40 border-t border-hairline bg-canvas/95 px-2 pt-1 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md lg:hidden"
     >
       <div className="flex items-end justify-evenly">
         <NavItem href="/" icon={<Home strokeWidth={2} />} label={t("home")} active={isHome} />

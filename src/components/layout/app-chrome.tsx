@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { usePathname } from "@/i18n/navigation";
 import { FloatingNav } from "@/components/layout/floating-nav";
 import { BottomNav } from "@/components/layout/bottom-nav";
+import { SideNav } from "@/components/layout/side-nav";
 import { cn } from "@/lib/utils";
 
 type AppChromeProps = {
@@ -21,21 +22,28 @@ export function AppChrome({ children, footer }: AppChromeProps) {
   const immersiveScroll = isFind || isBottle || isCocktails;
 
   return (
-    <div className="relative flex min-h-dvh flex-col">
-      {isHome ? <FloatingNav /> : null}
-      <div className="flex min-h-0 flex-1 flex-col">
+    <div className="flex min-h-dvh">
+      <SideNav />
+
+      <div className="relative flex min-h-dvh flex-1 flex-col overflow-hidden">
+        {isHome ? <FloatingNav /> : null}
+
         <div
           className={cn(
             "flex-1",
             immersiveScroll
               ? "flex min-h-0 flex-col overflow-hidden"
-              : cn("overflow-y-auto", !hideBottomNav && "nav-scroll-padding"),
-            isHome ? "pt-[5.5rem]" : "pt-0",
+              : cn(
+                  "overflow-y-auto",
+                  !hideBottomNav && "nav-scroll-padding lg:pb-0",
+                ),
+            isHome ? "pt-[5.5rem] lg:pt-0" : "pt-0",
           )}
         >
           {children}
           {isHome ? footer : null}
         </div>
+
         {hideBottomNav ? null : <BottomNav />}
       </div>
     </div>

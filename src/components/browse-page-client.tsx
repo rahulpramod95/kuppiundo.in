@@ -40,8 +40,8 @@ export function BrowsePageClient({ bottles }: BrowsePageClientProps) {
       : tResults("found", { count: results.length });
 
   return (
-    <div className="pb-8">
-      <div className="space-y-5 px-5 pt-4">
+    <div className="mx-auto w-full max-w-7xl pb-8">
+      <div className="space-y-5 px-5 pt-4 lg:px-8 lg:pt-6">
         <div>
           <h1 className="font-display text-xl font-semibold text-ink">{t("title")}</h1>
           <p className="mt-1 text-sm text-text-muted">{countLabel}</p>
@@ -82,7 +82,7 @@ export function BrowsePageClient({ bottles }: BrowsePageClientProps) {
             <p className="mt-2 text-sm text-muted-foreground">{tResults("no_results_hint")}</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 items-stretch gap-4">
+          <div className="grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {results.map((bottle, index) => (
               <BottleTile key={bottle.id} bottle={bottle} index={index} />
             ))}

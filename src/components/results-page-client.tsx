@@ -70,7 +70,7 @@ export function ResultsPageClient({
   const bestMatch = sort === "match" ? results[0] : undefined;
 
   return (
-    <div className="pb-8">
+    <div className="mx-auto w-full max-w-7xl pb-8">
       <SecondaryPageHeader
         backHref="/"
         backLabel={t("back_home")}
@@ -78,7 +78,7 @@ export function ResultsPageClient({
         subtitle={subtitle}
       />
 
-      <div className="space-y-5 px-5 pt-4">
+      <div className="space-y-5 px-5 pt-4 lg:px-8 lg:pt-6">
         <SearchBar
           value={search}
           onChange={setSearch}
@@ -109,7 +109,7 @@ export function ResultsPageClient({
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-2 items-stretch gap-4">
+          <div className="grid grid-cols-2 items-stretch gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {bestMatch ? (
               <BestMatchCallout
                 bottle={bestMatch}

@@ -50,7 +50,7 @@ export function CategoryGrid({ cocktailCounts }: CategoryGridProps) {
         <h2 className="font-display text-lg font-semibold tracking-tight text-ink">
           {t("brands_title")}
         </h2>
-        <div className="hide-scrollbar -mx-1 mt-4 flex gap-5 overflow-x-auto px-1 pb-1">
+        <div className="hide-scrollbar -mx-1 mt-4 flex gap-5 overflow-x-auto px-1 pb-1 lg:flex-wrap lg:overflow-visible">
           {SPIRIT_TYPES.map((type) => (
             <button
               key={type}
@@ -71,7 +71,7 @@ export function CategoryGrid({ cocktailCounts }: CategoryGridProps) {
         <h2 className="font-display text-lg font-semibold leading-snug tracking-tight text-ink">
           {t("cocktails_title")}
         </h2>
-        <div className="hide-scrollbar -mx-5 mt-4 flex gap-4 overflow-x-auto px-5 pb-2">
+        <div className="hide-scrollbar -mx-5 mt-4 flex gap-4 overflow-x-auto px-5 pb-2 lg:mx-0 lg:flex-wrap lg:overflow-visible lg:px-0">
           {SPIRIT_TYPES.map((type, index) => {
             const count = cocktailCounts[type];
             return (
