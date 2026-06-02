@@ -28,7 +28,7 @@ export function AppChrome({ children, footer }: AppChromeProps) {
     <div className={cn("flex", immersiveScroll ? "h-dvh overflow-hidden" : "min-h-dvh")}>
       <SideNav />
 
-      <div className={cn("relative flex flex-1 flex-col", immersiveScroll && "overflow-hidden")}>
+      <div className={cn("relative flex min-w-0 flex-1 flex-col overflow-x-hidden", immersiveScroll && "overflow-hidden")}>
         {/* Floating nav: mobile home only */}
         {isHome ? <FloatingNav /> : null}
 

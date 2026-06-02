@@ -80,7 +80,7 @@ export function PromoBanner({ bottles }: PromoBannerProps) {
   const theme = PROMO_THEMES[index % PROMO_THEMES.length];
 
   return (
-    <div className="relative touch-pan-y">
+    <div className="relative w-full overflow-hidden touch-pan-y">
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
           key={bottle.id}
@@ -96,7 +96,7 @@ export function PromoBanner({ bottles }: PromoBannerProps) {
           onDragStart={handleDragStart}
           onDrag={handleDrag}
           onDragEnd={handleDragEnd}
-          className={`soft-card relative overflow-hidden ${theme.card}`}
+          className={`soft-card relative w-full overflow-hidden ${theme.card}`}
         >
           <Link
             href={`/bottle/${bottle.id}`}
