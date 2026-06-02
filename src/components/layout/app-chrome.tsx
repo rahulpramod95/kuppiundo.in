@@ -19,23 +19,28 @@ export function AppChrome({ children, footer }: AppChromeProps) {
   const isBottle = pathname.startsWith("/bottle/");
   const isCocktails = pathname.startsWith("/cocktails/");
   const hideBottomNav = isBottle || isFind || isCocktails;
+
+  // Immersive pages (find, bottle, cocktails) manage their own internal scroll
+  // so they need the outer container to not scroll
   const immersiveScroll = isFind || isBottle || isCocktails;
 
   return (
-    <div className="flex min-h-dvh">
+    <div className={cn("flex", immersiveScroll ? "h-dvh overflow-hidden" : "min-h-dvh")}>
       <SideNav />
 
-      <div className="relative flex min-h-dvh flex-1 flex-col overflow-hidden">
+      <div className={cn("relative flex flex-1 flex-col", immersiveScroll && "overflow-hidden")}>
+        {/* Floating nav: mobile home only */}
         {isHome ? <FloatingNav /> : null}
 
+        {/* Main content — window scroll (non-immersive) or internal scroll (immersive) */}
         <div
           className={cn(
             "flex-1",
             immersiveScroll
-              ? "flex min-h-0 flex-col overflow-hidden"
+              ? "flex min-h-0 flex-col overflow-y-auto overscroll-contain"
               : cn(
-                  "overflow-y-auto",
-                  !hideBottomNav && "nav-scroll-padding lg:pb-0",
+                  // no overflow here — body/window scrolls naturally (fixes iOS tap/focus)
+                  !hideBottomNav && "pb-[calc(5rem+env(safe-area-inset-bottom,0px))] lg:pb-0",
                 ),
             isHome ? "pt-[5.5rem] lg:pt-0" : "pt-0",
           )}
@@ -44,6 +49,7 @@ export function AppChrome({ children, footer }: AppChromeProps) {
           {isHome ? footer : null}
         </div>
 
+        {/* Mobile bottom nav — fixed so it doesn't interfere with window scroll */}
         {hideBottomNav ? null : <BottomNav />}
       </div>
     </div>

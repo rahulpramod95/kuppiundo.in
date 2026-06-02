@@ -52,7 +52,7 @@ export function FilterPanel({
     const next = filters.type.includes(type)
       ? filters.type.filter((item) => item !== type)
       : [...filters.type, type];
-    onChange({ ...filters, type: next.length ? next : [...SPIRIT_TYPES] });
+    onChange({ ...filters, type: next });
   }
 
   function toggleList<T extends string>(key: keyof FilterState, value: T) {
@@ -67,23 +67,23 @@ export function FilterPanel({
     const next = filters.abv.includes(value)
       ? filters.abv.filter((item) => item !== value)
       : [...filters.abv, value];
-    onChange({ ...filters, abv: next.length ? next : [...ABV_OPTIONS] });
+    onChange({ ...filters, abv: next });
   }
 
   function toggleOrigin(value: (typeof ORIGIN_OPTIONS)[number]) {
     const next = filters.origin.includes(value)
       ? filters.origin.filter((item) => item !== value)
       : [...filters.origin, value];
-    onChange({ ...filters, origin: next.length ? next : [...ORIGIN_OPTIONS] });
+    onChange({ ...filters, origin: next });
   }
 
   const activeCount =
     filters.taste.length +
     filters.notes.length +
     filters.occasions.length +
-    (filters.type.length < SPIRIT_TYPES.length ? 1 : 0) +
-    (filters.abv.length < ABV_OPTIONS.length ? 1 : 0) +
-    (filters.origin.length < ORIGIN_OPTIONS.length ? 1 : 0) +
+    (filters.type.length > 0 && filters.type.length < SPIRIT_TYPES.length ? 1 : 0) +
+    (filters.abv.length > 0 && filters.abv.length < ABV_OPTIONS.length ? 1 : 0) +
+    (filters.origin.length > 0 && filters.origin.length < ORIGIN_OPTIONS.length ? 1 : 0) +
     (filters.budget !== DEFAULT_FILTERS.budget ? 1 : 0);
 
   const body = (

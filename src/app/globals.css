@@ -132,6 +132,8 @@ html {
   scroll-behavior: smooth;
   color-scheme: light;
   -webkit-tap-highlight-color: transparent;
+  /* Prevent iOS overscroll bounce from stealing taps */
+  overscroll-behavior: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -186,5 +188,30 @@ html {
     @apply bg-canvas font-sans text-foreground;
     text-rendering: optimizeLegibility;
     touch-action: manipulation;
+    /* Prevent content from being hidden under iOS status bar */
+    padding-top: env(safe-area-inset-top);
+  }
+  /* Ensure all interactive elements respond to touch instantly */
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [role="link"],
+  [tabindex] {
+    touch-action: manipulation;
+    /* Prevent double-tap zoom on interactive elements */
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Input elements: prevent iOS auto-zoom on focus (font-size must be >= 16px or use transform) */
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: max(16px, 1em);
   }
 }

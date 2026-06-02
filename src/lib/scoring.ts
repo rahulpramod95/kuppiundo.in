@@ -1,9 +1,10 @@
 import type { Bottle, FilterState } from "./types";
 
 export function scoreBottle(bottle: Bottle, filters: FilterState): number {
-  if (!filters.type.includes(bottle.type)) return -1;
-  if (!filters.abv.includes(bottle.abv_range)) return -1;
-  if (!filters.origin.includes(bottle.origin)) return -1;
+  // Empty array = no restriction on that field (treat as "all")
+  if (filters.type.length > 0 && !filters.type.includes(bottle.type)) return -1;
+  if (filters.abv.length > 0 && !filters.abv.includes(bottle.abv_range)) return -1;
+  if (filters.origin.length > 0 && !filters.origin.includes(bottle.origin)) return -1;
   if (bottle.price_750ml > filters.budget * 1.1) return -1;
 
   let score = 0;
